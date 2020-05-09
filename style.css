@@ -8,11 +8,11 @@
 	padding: 0;
 }
 body {
-	background-image:url('nel.jpg');
+	background-image:url('ms.jpg');
 	font-family:serif;
 }
 .contact-box {
-    background-color:rgb(250,100,20);
+    background-color:rgba(250,100,20,0.1);
 	width:500px;
 	opacity: 1;
 	margin: auto;

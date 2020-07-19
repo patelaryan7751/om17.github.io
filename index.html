@@ -16,7 +16,7 @@
   <label for="first_name"><b>First Name</b> *</label>
  </td>
  <td valign="top">
-  <input  type="text" name="first_name" class="input-area" maxlength="50" size="30">
+  <input  type="text" name="first_name" class="input-area" maxlength="50" size="30" id="first_name">
  </td>
 </tr>
 <tr>
@@ -24,7 +24,7 @@
   <label for="last_name"><b>Last Name</b>*</label>
  </td>
  <td valign="top">
-  <input  type="text" name="last_name" class="input-area" maxlength="50" size="30">
+  <input  type="text" name="last_name" class="input-area" maxlength="50" size="30" id="last_name">
  </td>
 </tr>
 <tr>
@@ -32,7 +32,7 @@
   <label for="email"><b>Email Address</b> *</label>
  </td>
  <td valign="top">
-  <input  type="text" name="email" class="input-area" maxlength="80" size="30">
+  <input  type="text" name="email" class="input-area" maxlength="80" size="30" id="email">
  </td>
  
 </tr>
@@ -41,7 +41,7 @@
   <label for="telephone"><b>Telephone Number</b></label>
  </td>
  <td valign="top">
-  <input  type="text" name="telephone" class="input-area" maxlength="30" size="30">
+  <input  type="text" name="telephone" class="input-area" maxlength="30" size="30" id="telephone">
  </td>
 </tr>
 <tr>
@@ -49,17 +49,20 @@
   <label for="comments"><b>Comments</b> *</label>
  </td>
  <td valign="top">
-  <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+  <textarea  name="comments" maxlength="1000" cols="25" rows="6" id="comments"></textarea>
  </td>
  
 </tr>
 <tr>
  <td colspan="2" style="text-align:center">
-  <input type="submit" class="buttom" value="Submit"> 
+  <input type="submit" class="buttom" value="Submit">
  </td>
 </tr>
 </table>
 </form>
 </div>
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

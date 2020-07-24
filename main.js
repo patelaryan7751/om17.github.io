@@ -12,7 +12,7 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   var messagesRef = firebase.database().ref('messages');
-  document.getElementById('contactForm').addEventListener('submit', submitForm);
+  document.getElementById('contact-form').addEventListener('submit', submitForm);
 
 function submitForm(e){
 	e.preventDefault();

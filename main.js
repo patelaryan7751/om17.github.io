@@ -25,7 +25,7 @@ function submitForm(e){
 
 }
 function getInputVal(id) {
-	return.document.getElementById(id).value;
+	return document.getElementById(id).value;
 	// body...
 }
 function saveMessage(first_name,last_name,email,telephone,comments){

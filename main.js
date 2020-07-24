@@ -1,12 +1,12 @@
 var firebaseConfig = {
-    apiKey: "AIzaSyDHLRZWpZaRoG0IZeqa-9S2ZREjgOlQKdg",
-    authDomain: "contactform-41be0.firebaseapp.com",
-    databaseURL: "https://contactform-41be0.firebaseio.com",
-    projectId: "contactform-41be0",
-    storageBucket: "contactform-41be0.appspot.com",
-    messagingSenderId: "798127909563",
-    appId: "1:798127909563:web:9661ffbc2526bb38fd979e",
-    measurementId: "G-P21C4L8KV0"
+    apiKey: "AIzaSyAtF7yZFZ18xzl_mz3PFu4mQrhXrXNL4Gs",
+    authDomain: "contact-form-df695.firebaseapp.com",
+    databaseURL: "https://contact-form-df695.firebaseio.com",
+    projectId: "contact-form-df695",
+    storageBucket: "contact-form-df695.appspot.com",
+    messagingSenderId: "765685836411",
+    appId: "1:765685836411:web:bcec69b2794b8e09b990de",
+    measurementId: "G-Y8ZWF3HZRQ"
   };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -20,13 +20,13 @@ function submitForm(e){
     e.preventDefault();
 
 
-     var Name = getinput('uname');
-     var Phone = getinput('phone');
-     var Gender = getinputg('gender');
+     var first_name = getinput('uname');
+     var last_name = getinput('lname');
+     var telephone = getinput('telephone');
      var Email = getinput('email');
-     var Message = getinput('message');
+     var comments = getinput('comments');
 
-    savemsg(Name, Phone, Gender, Email, Message);
+    savemsg(first_name ,last_name , telephone, Email, comments);
 
     document.querySelector('.confirm').style.display = 'block';
 
@@ -61,14 +61,13 @@ function getinputg(id){
     }
 }
 
-function savemsg(Name ,Phone, Gender ,Email, Message){
+function savemsg(first_name,last_name,telephone,Email, Message){
     var newdb = db.push();
     newdb.set({
 
         NAME: Name,
-        PHONE: Phone,
-        GENDER: Gender,
+        telephone: telephone,
         EMAIL: Email,
-        MESSAGE: Message   
+        comments: comments   
     });
 }

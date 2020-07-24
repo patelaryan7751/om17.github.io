@@ -37,3 +37,4 @@ function saveMessage(first_name,last_name,email,telephone,comments){
 		telephone:telephone,
 		comments:comments
 	});
+}

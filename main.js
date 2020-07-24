@@ -8,66 +8,32 @@ var firebaseConfig = {
     appId: "1:765685836411:web:bcec69b2794b8e09b990de",
     measurementId: "G-Y8ZWF3HZRQ"
   };
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-var db = firebase.database().ref('message');
-
-
-document.getElementById('contactform'),addEventListener('submit',submitForm);
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  var messagesRef = firebase.database().ref('messages');
+document.getElementById('contactForm').addEventListener('submit',submitForm);
 
 function submitForm(e){
+	e.preventDefault();
+	var first_name = getInputVal('first_name');
+	var last_name = getInputVal('last_name');
+	var email = getInputVal('email');
+	var telephone = getInputVal('telephone');
+	var comments = getInputVal('comments');
+	saveMessage(first_name,last_name,email,telephone,comments);
 
-    e.preventDefault();
-
-
-     var first_name = getinput('uname');
-     var last_name = getinput('lname');
-     var telephone = getinput('telephone');
-     var Email = getinput('email');
-     var comments = getinput('comments');
-
-    savemsg(first_name ,last_name , telephone, Email, comments);
-
-    document.querySelector('.confirm').style.display = 'block';
-
-    setTimeout(function(){
-
-        document.querySelector('.confirm').style.display = 'none';
-    },3500);
-
-    document.getElementById('contactform').reset();
 }
-
-function getinput(id){
-    return document.getElementById(id).value;
+function getInputVal(id) {
+	return.document.getElementById(id).value;
+	// body...
 }
-
-function getinputg(id){
-    var g;
-    if(gender[0].checked)
-    {
-        g = gender[0].value;
-        return g;
-    }
-    else if(gender[1].checked)
-    {
-        g = gender[1].value;
-        return g;
-    }
-    else if(gender[2].checked)
-    {
-        g = gender[2].value;
-        return g;
-    }
-}
-
-function savemsg(first_name,last_name,telephone,Email, Message){
-    var newdb = db.push();
-    newdb.set({
-
-        NAME: Name,
-        telephone: telephone,
-        EMAIL: Email,
-        comments: comments   
-    });
-}
+function saveMessage(first_name,last_name,email,telephone,comments){
+	var newMessageRef = messagesRef.push();
+	newMessageRef.set({
+		first_name:first_name,
+		last_name:last_name,
+		email:email,
+		telephone:telephone,
+		comments:comments
+	});
